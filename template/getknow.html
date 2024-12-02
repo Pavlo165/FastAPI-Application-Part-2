@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Known Ransomware CVEs</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CVEs with Known Ransomware Campaigns</h1>
+        <div class="cve-list">
+            {% for cve in cves %}
+            <div class="cve-item">
+                <h2>{{ cve.cveID }}</h2>
+                <p><strong>Vendor:</strong> {{ cve.vendorProject }}</p>
+                <p><strong>Product:</strong> {{ cve.product }}</p>
+                <p><strong>Vulnerability Name:</strong> {{ cve.vulnerabilityName }}</p>
+                <p><strong>Date Added:</strong> {{ cve.dateAdded }}</p>
+                <p><strong>Description:</strong> {{ cve.shortDescription }}</p>
+                <p><strong>Required Action:</strong> {{ cve.requiredAction }}</p>
+                <p><strong>Due Date:</strong> {{ cve.dueDate }}</p>
+                <p><strong>Known Ransomware Campaign Use:</strong> {{ cve.knownRansomwareCampaignUse }}</p>
+                <p><strong>Notes:</strong>
+                    {% for note in cve.notes.split(';') %}
+                    <a href="{{ note.strip() }}" target="_blank">{{ note.strip() }}</a><br>
+                    {% endfor %}
+                </p>
+                <p><strong>Associated CWEs:</strong>
+                    {% if cve.cwes %}
+                    <ul>
+                        {% for cwe in cve.cwes %}
+                        <li>{{ cwe }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    None
+                    {% endif %}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

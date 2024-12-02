@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.cve-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cve-item {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.cve-item h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.cve-item p {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.cve-item ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+.cve-item ul li {
+    margin: 3px 0;
+}
+
+
+
